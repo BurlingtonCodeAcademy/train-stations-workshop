@@ -28,25 +28,6 @@ class Line {
 
 
     }
-
-    //creating a transfer method on our Line class objects, passing in the target where transfer is called
-    transfer(target) {
-        //if  the value of the key 'connections' includes 'target'
-
-        //set the current line to the target
-
-        //inform the user of the change in current line
-
-        //call our riding function to continue getting input
-
-        //if the value of the key 'connections' does NOT include 'target'
-
-        //inform user that they can't transfer lines
-
-        //call our riding function to continue getting input
-
-
-    }
 }
 
 //defining the line our user starts on
