@@ -28,25 +28,7 @@ class Line {
             //inform the user where they are and where they can connect to.
             console.log(`From the ${this.name} line, you can connect to the ${this.connections} line(s).`)
         }
-    }
-
-    //creating a transfer method on our Line class objects, passing in the target where transfer is called
-    transfer(target) {
-        //if  the value of the key 'connections' includes 'target'
-        if (this.connections.includes(target)) {
-            //set the current line to the target
-            currentLine = target.toLowerCase()
-            //inform the user of the change in current line
-            console.log(`You transferred to the ${target} line.`)
-            //call our riding function to continue getting input
-            riding()
-            //if the value of the key 'connections' does NOT include 'target'
-        } else {
-            //inform user that they can't transfer lines
-            console.log("You can't transfer there from here.")
-            //call our riding function to continue getting input
-            riding()
-        }
+    
     }
 }
 
@@ -95,6 +77,15 @@ let lineLookUp = {
 
 }
 
+//create state machine to hold allowable transitions 
+let lineStateMachine = {
+    blue: ["Green", "Yellow"],
+    green: ["Blue", "Red"],
+    yellow: ["Blue", "Purple"],
+    red: ["Green"],
+    purple: ["Yellow"]
+}
+
 //create function that holds our intro text which tells the user their command options
 function rideBegin() {
     //console log that greets user and informs them of their command options
@@ -106,7 +97,7 @@ function rideBegin() {
 //create function who solely exists to deal with user input
 async function riding() {
     //assign result of await ask to a variable for use
-    let input = await ask("What shall you do?>_")
+    let input = await ask("What shall you do?  >_")
 
     //split the input on a space
     input = input.split(" ");
@@ -136,8 +127,21 @@ async function riding() {
 
     //if action is "transfer" and there is a target
     if (action === "transfer" && target) {
-        //look up the current line in the lookup table and call the transfer method while passing in target
-        lineLookUp[currentLine].transfer(target)
+        //if  the value of the key 'connections' includes 'target'
+        if (lineStateMachine[currentLine].includes(target)) {
+            //set the current line to the target
+            currentLine = target.toLowerCase()
+            //inform the user of the change in current line
+            console.log(`You transferred to the ${target} line.`)
+            //call our riding function to continue getting input
+            riding()
+            //if the value of the key 'connections' does NOT include 'target'
+        } else {
+            //inform user that they can't transfer lines
+            console.log("You can't transfer there from here.")
+            //call our riding function to continue getting input
+            riding()
+        }
     }
 
 
