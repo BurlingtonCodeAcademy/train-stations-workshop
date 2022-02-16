@@ -74,6 +74,12 @@ let lineLookUp = {
 
 }
 
+//create state machine to hold allowable transitions 
+let lineStateMachine = {
+
+}
+
+
 //create function that holds our intro text which tells the user their command options
 function rideBegin() {
     //console log that greets user and informs them of their command options
