@@ -124,7 +124,7 @@ async function riding() {
 
     //if action is "transfer" and there is a target
     if (action === "transfer" && target) {
-        //if  the value of the key 'connections' includes 'target'
+        //if  the value of currentLine in the state machine includes the action target
         if (lineStateMachine[currentLine].includes(target)) {
             //set the current line to the target
             currentLine = target.toLowerCase()
@@ -132,7 +132,7 @@ async function riding() {
             console.log(`You transferred to the ${target} line.`)
             //call our riding function to continue getting input
             riding()
-            //if the value of the key 'connections' does NOT include 'target'
+            //if the value of currentLine in the state machine does NOT include the action target
         } else {
             //inform user that they can't transfer lines
             console.log("You can't transfer there from here.")
