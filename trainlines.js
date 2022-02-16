@@ -22,11 +22,7 @@ class Line {
 
     //creating a map method on our Line class objects
     map() {
-        //if the map method is called on 'this'
-
         //inform the user where they are and where they can connect to.
-
-
     }
 }
 
