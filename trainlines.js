@@ -93,8 +93,18 @@ async function riding() {
     //exit the program
 
     //if action is "transfer" and there is a target
-
-    //look up the current line in the lookup table and call the transfer method while passing in target
+        //if  the value of currentLine in the state machine includes the action target
+            //set the current line to the target
+            //inform the user of the change in current line
+            //call our riding function to continue getting input
+ 
+            //if the value of currentLine in the state machine does NOT include the action target
+        
+            //inform user that they can't transfer lines
+            
+            //call our riding function to continue getting input
+            
+        }
 }
 
 
