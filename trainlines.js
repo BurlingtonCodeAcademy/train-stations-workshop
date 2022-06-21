@@ -130,14 +130,14 @@ async function riding() {
             currentLine = target.toLowerCase()
             //inform the user of the change in current line
             console.log(`You transferred to the ${target} line.`)
-            //call our riding function to continue getting input
-            riding()
+            
+            
             //if the value of currentLine in the state machine does NOT include the action target
         } else {
             //inform user that they can't transfer lines
             console.log("You can't transfer there from here.")
-            //call our riding function to continue getting input
-            riding()
+            
+            
         }
     }
 
@@ -145,9 +145,9 @@ async function riding() {
     //if the input does not match any of the available options
     if (action !== "map" && action !== "transfer" && action !== "relax") {
         //let the user know their input is incorrect
-        console.log("What are you trying to do?")
-        //call the input loop
-        riding()
+        console.log("The conductor notices your odd behavior....")
+       
+        
     }
 
     //call the input loop recursively so it always prompts the user to continue
