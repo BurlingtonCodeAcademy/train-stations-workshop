@@ -68,57 +68,60 @@ function rideBegin() {
 //create function who solely exists to deal with user input
 async function riding() {
     //assign result of await ask to a variable for use
-
+    
 
     //split the input on a space
-
+    
 
     //let action be the first word in input
-
+    
 
     //let target be the second word in input
-
+    
 
     //capitalize the first letter in target
-
+    
 
     //if action is "map" and there is no target
-
-    //look up the current line in the lookup table and call the map method on it
+    
+        //look up the current line in the lookup table and call the map method on it
+        
+    
 
     //if action is "relax" and there is no target
-
-    //console log the exit message
-
-    //exit the program
+   
+        //console log the exit message
+       
+        //exit the program
+       
+    
 
     //if action is "transfer" and there is a target
-
-    //if  the value of currentLine in the state machine includes the action target
-
-    //set the current line to the target
-
-    //inform the user of the change in current line
     
-    //call our riding function to continue getting input
+        //if  the value of currentLine in the state machine includes the action target
+       
+            //set the current line to the target
+            
+            //inform the user of the change in current line
+            
+            
+            
+            //if the value of currentLine in the state machine does NOT include the action target
+       
+            //inform user that they can't transfer lines
+            
+            
+            
+  
 
-    //if the value of currentLine in the state machine does NOT include the action target
+    //if the input does not match any of the available options
+    
+        //let the user know their input is incorrect
+  
 
-    //inform user that they can't transfer lines
-
-    //call our riding function to continue getting input
-
-
+    //call the input loop recursively so it always prompts the user to continue
+    
 }
-
-
-//if the input does not match any of the available options
-
-//let the user know their input is incorrect
-
-//call the input loop
-
-//call the input loop recursively so it always prompts the user to continue
 
 //call the intro function
 rideBegin()
